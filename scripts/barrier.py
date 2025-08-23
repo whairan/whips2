@@ -1,3 +1,4 @@
+# scripts/barrier.py
 import pygame
 
 class Barrier(pygame.sprite.Sprite):
@@ -9,8 +10,11 @@ class Barrier(pygame.sprite.Sprite):
         self.locked = True
 
     def interact(self, screen, font):
-        """Show puzzle; unlock if solved."""
-        solved = self.puzzle.ask(screen, font)
-        if solved:
+        """
+        Opens a modal puzzle UI. Blocks until the player solves it.
+        Returns: dict like {'done': True, 'correct': True, 'wrong_tries': N}
+        """
+        result = self.puzzle.interact(screen, font)
+        if result and result.get("done") and result.get("correct"):
             self.locked = False
-        return solved
+        return result

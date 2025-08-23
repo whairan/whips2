@@ -1,56 +1,68 @@
 # scripts/player.py
-
 import pygame
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, x, y):
         super().__init__()
-        # Load player sprite or fall back to a white box
+
+        # Try to load a sprite; fall back to a simple rectangle
         try:
-            self.image = pygame.image.load("assets/images/player.png").convert_alpha()
+            img = pygame.image.load("assets/images/player.png").convert_alpha()
         except Exception:
-            self.image = pygame.Surface((30, 50))
-            self.image.fill((255, 255, 255))
+            img = pygame.Surface((30, 50), pygame.SRCALPHA)
+            img.fill((255, 255, 255))  # white placeholder
 
+        self.image = img
         self.rect = self.image.get_rect(topleft=(x, y))
-        self.speed = 5
 
-        # track last position so we can undo on collisions
-        self.prev_pos = self.rect.topleft
+        # movement
+        self.speed = 5
+        self._dx = 0
+        self._dy = 0
+
+        # for undo_move()
+        self._prev_pos = self.rect.topleft
 
     def handle_input(self, event):
-        # stub so main.py can call it without error
-        pass
+        if event.type == pygame.KEYDOWN:
+            if event.key in (pygame.K_LEFT, pygame.K_a):
+                self._dx = -self.speed
+            elif event.key in (pygame.K_RIGHT, pygame.K_d):
+                self._dx = self.speed
+            elif event.key in (pygame.K_UP, pygame.K_w):
+                self._dy = -self.speed
+            elif event.key in (pygame.K_DOWN, pygame.K_s):
+                self._dy = self.speed
+
+        elif event.type == pygame.KEYUP:
+            if event.key in (pygame.K_LEFT, pygame.K_a) and self._dx < 0:
+                self._dx = 0
+            elif event.key in (pygame.K_RIGHT, pygame.K_d) and self._dx > 0:
+                self._dx = 0
+            elif event.key in (pygame.K_UP, pygame.K_w) and self._dy < 0:
+                self._dy = 0
+            elif event.key in (pygame.K_DOWN, pygame.K_s) and self._dy > 0:
+                self._dy = 0
 
     def update(self):
-        # record previous position
-        self.prev_pos = self.rect.topleft
+        # remember last position so we can undo on collision
+        self._prev_pos = self.rect.topleft
 
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_LEFT]:
-            self.rect.x -= self.speed
-        if keys[pygame.K_RIGHT]:
-            self.rect.x += self.speed
-        if keys[pygame.K_UP]:
-            self.rect.y -= self.speed
-        if keys[pygame.K_DOWN]:
-            self.rect.y += self.speed
+        # move
+        self.rect.x += self._dx
+        self.rect.y += self._dy
 
-        # ── new clamp code ──
-        screen_rect = pygame.display.get_surface().get_rect()
-        self.rect.clamp_ip(screen_rect)
-
-
-        
+        # clamp to screen
+        surf = pygame.display.get_surface()
+        if surf:
+            self.rect.clamp_ip(surf.get_rect())
 
     def undo_move(self):
-        """Revert to previous position (e.g. after hitting a wall)."""
-        self.rect.topleft = self.prev_pos
+        self.rect.topleft = self._prev_pos
 
     def reset_move(self):
-        """Called when a puzzle pops up—to clear any residual movement."""
-        # nothing needed here unless you add velocity logic
-        pass
+        self._dx = 0
+        self._dy = 0
 
     def draw(self, surface):
         surface.blit(self.image, self.rect)
