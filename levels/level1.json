@@ -1,43 +1,18 @@
 {
-    "background": "forest_bg.png",
-    "water": { "x": 490, "y": 220, "width": 300, "height": 180 },
-    "trees": [
-      { "x": 120, "y": 110 },
-      { "x": 220, "y": 140 },
-      { "x": 320, "y": 90  },
-      { "x": 140, "y": 260 },
-      { "x": 300, "y": 320 },
-      { "x": 420, "y": 80  },
-      { "x": 80,  "y": 380 },
-      { "x": 260, "y": 420 },
-      { "x": 420, "y": 420 },
-      { "x": 760, "y": 120 },
-      { "x": 820, "y": 200 },
-      { "x": 740, "y": 340 }
-    ],
-  
-    "barriers": [
-      {
-        "x": 460,
-        "y": 180,
-        "puzzle": { "type": "arithmetic_mc", "ops": ["add","sub"], "difficulty": "easy", "choices": 4 }
-      },
-      {
-        "x": 640,
-        "y": 180,
-        "puzzle": { "type": "arithmetic_mc", "ops": ["mul"], "difficulty": "easy", "choices": 4 }
-      },
-      {
-        "x": 520,
-        "y": 430,
-        "puzzle": { "type": "arithmetic_mc", "ops": ["add","sub","mul"], "difficulty": "medium", "choices": 4 }
-      },
-      {
-        "x": 780,
-        "y": 300,
-        "puzzle": { "type": "arithmetic_mc", "ops": ["div"], "difficulty": "medium", "choices": 4 }
-      }
-    ],
-    "exit": { "x": 900, "y": 480, "width": 32, "height": 32, "image": "exit.png" }
-  }
-  
+  "background": "forest_bg.png",
+  "water": { "x": 490, "y": 220, "width": 300, "height": 180 },
+
+  "trees": [
+    { "x": 120, "y": 110 }, { "x": 220, "y": 140 }, { "x": 320, "y": 90 },
+    { "x": 140, "y": 260 }, { "x": 300, "y": 320 }, { "x": 420, "y": 80 }
+  ],
+
+  "barriers": [
+    { "x": 460, "y": 180,
+      "puzzle": { "type": "arithmetic_mc", "ops": ["add","sub"], "min": 0, "max": 12, "allow_negative": false, "choices": 4 } },
+    { "x": 640, "y": 180,
+      "puzzle": { "type": "arithmetic_mc", "ops": ["add","sub"], "min": 0, "max": 12, "allow_negative": false, "choices": 4 } }
+  ],
+
+  "exit": { "x": 900, "y": 480, "width": 32, "height": 32, "image": "exit.png" }
+}
