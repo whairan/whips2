@@ -59,7 +59,7 @@ class Player(pygame.sprite.Sprite):
 
     def undo_move(self):
         self.rect.topleft = self._prev_pos
-
+        
     def reset_move(self):
         self._dx = 0
         self._dy = 0
