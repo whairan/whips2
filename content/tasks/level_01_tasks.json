@@ -1,0 +1,240 @@
+[
+  {
+    "task_id": "task_diagnostic_count_01",
+    "topic": "counting_to_20",
+    "skill_tags": ["count_objects"],
+    "difficulty": 1,
+    "type": "interactive",
+    "representations": ["visual"],
+    "prompt": "How many butterflies do you see in the clearing?",
+    "visual": {"type": "butterfly_scatter", "params": {"count": 4, "arrangement": "scattered"}},
+    "input_type": "number_entry",
+    "answer": 4,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "count_one_by_one", "hint": "Tap each butterfly as you count"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Try tapping each butterfly to count it"},
+      {"level": 2, "text": "Start from the left side and work to the right"},
+      {"level": 3, "text": "There are fewer than 5 butterflies"}
+    ],
+    "explanation": "There are 4 butterflies in the clearing. Counting each one: 1, 2, 3, 4.",
+    "on_correct": {"trigger": "quest_progress", "target": "warmup_complete"},
+    "on_incorrect": {"feedback": "gentle_retry", "offer_hint": true},
+    "whiteboard_enabled": true,
+    "tools_available": [],
+    "tags": ["curated", "warmup"]
+  },
+  {
+    "task_id": "task_teach_count_tap",
+    "topic": "counting_to_20",
+    "skill_tags": ["count_objects", "one_to_one_correspondence"],
+    "difficulty": 1,
+    "type": "interactive",
+    "representations": ["visual", "symbolic"],
+    "prompt": "Tap each mango on the tree to count them. The number will appear as you tap!",
+    "visual": {"type": "fruit_tree_interactive", "params": {"fruit": "mango", "count": 6, "tap_to_count": true}},
+    "input_type": "number_entry",
+    "answer": 6,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "tap_counting", "hint": "Tap each fruit — a number will appear on it"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Tap each mango — watch the numbers appear!"},
+      {"level": 2, "text": "Make sure you don't tap the same mango twice"},
+      {"level": 3, "text": "You should see numbers 1 through 6"}
+    ],
+    "explanation": "There are 6 mangoes on the tree. By tapping each one, we give it a number: 1, 2, 3, 4, 5, 6. This is called one-to-one correspondence — each object gets exactly one number.",
+    "on_correct": {"trigger": "quest_progress", "target": "teach_1_complete"},
+    "on_incorrect": {"feedback": "gentle_retry", "offer_hint": true},
+    "whiteboard_enabled": true,
+    "tools_available": [],
+    "tags": ["curated", "teach"]
+  },
+  {
+    "task_id": "task_teach_count_sequence",
+    "topic": "counting_to_20",
+    "skill_tags": ["count_sequence"],
+    "difficulty": 1,
+    "type": "interactive",
+    "representations": ["symbolic", "number_line"],
+    "prompt": "Fill in the missing numbers in this counting sequence: 1, 2, _, 4, _, 6, 7, _, 9, _",
+    "visual": {"type": "number_sequence", "params": {"sequence": [1, 2, null, 4, null, 6, 7, null, 9, null]}},
+    "input_type": "fill_table",
+    "answer": [3, 5, 8, 10],
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "count_forward", "hint": "Count forward from the number before the blank"},
+      {"method": "count_backward", "hint": "Count backward from the number after the blank"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Say the counting numbers out loud: 1, 2, ..."},
+      {"level": 2, "text": "What comes after 2? What comes after 4?"},
+      {"level": 3, "text": "The missing numbers are 3, 5, 8, and 10"}
+    ],
+    "explanation": "The counting sequence goes: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10. Each number is one more than the number before it.",
+    "whiteboard_enabled": true,
+    "tools_available": [],
+    "tags": ["curated", "teach"]
+  },
+  {
+    "task_id": "task_practice_count_fruit",
+    "topic": "counting_to_20",
+    "skill_tags": ["count_objects"],
+    "difficulty": 2,
+    "type": "interactive",
+    "representations": ["visual"],
+    "prompt": "How many mangoes are on this tree?",
+    "visual": {"type": "fruit_tree_display", "params": {"fruit": "mango", "count": 9, "arrangement": "scattered"}},
+    "input_type": "number_entry",
+    "answer": 9,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "count_one_by_one", "hint": "Tap each mango as you count"},
+      {"method": "group_and_count", "hint": "Can you see groups of 3?"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Tap each fruit to mark it as counted"},
+      {"level": 2, "text": "Try counting from left to right, top to bottom"},
+      {"level": 3, "text": "There are more than 7 but fewer than 11"}
+    ],
+    "explanation": "There are 9 mangoes on the tree. Counting carefully: 1, 2, 3, 4, 5, 6, 7, 8, 9.",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "practice"]
+  },
+  {
+    "task_id": "task_practice_count_stones",
+    "topic": "counting_to_20",
+    "skill_tags": ["count_objects"],
+    "difficulty": 2,
+    "type": "interactive",
+    "representations": ["visual"],
+    "prompt": "Count the stones in the pile.",
+    "visual": {"type": "object_scatter", "params": {"object": "stone", "count": 13, "arrangement": "pile"}},
+    "input_type": "number_entry",
+    "answer": 13,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "count_one_by_one", "hint": "Move each stone as you count it"},
+      {"method": "group_and_count", "hint": "Make groups of 5, then count the rest"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Try moving each stone to a new pile as you count"},
+      {"level": 2, "text": "There are more than 10 stones"},
+      {"level": 3, "text": "Count: 10, 11, 12, 13"}
+    ],
+    "explanation": "There are 13 stones. One way to count is to make a group of 10, then count the remaining 3: 10 + 3 = 13.",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "practice"]
+  },
+  {
+    "task_id": "task_practice_count_animals",
+    "topic": "counting_to_20",
+    "skill_tags": ["count_objects", "count_sequence"],
+    "difficulty": 3,
+    "type": "interactive",
+    "representations": ["visual"],
+    "prompt": "How many birds are sitting on the branches? Some are hiding behind leaves!",
+    "visual": {"type": "hidden_objects", "params": {"object": "bird", "visible": 8, "hidden": 3, "total": 11}},
+    "input_type": "number_entry",
+    "answer": 11,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "find_and_count", "hint": "Look carefully behind the leaves!"},
+      {"method": "count_visible_then_hidden", "hint": "Count the visible birds first, then find the hidden ones"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Some birds are hiding behind leaves — tap the leaves to look"},
+      {"level": 2, "text": "You can see 8 birds. Are there more hiding?"},
+      {"level": 3, "text": "There are 3 hidden birds plus 8 visible birds"}
+    ],
+    "explanation": "There are 11 birds total — 8 visible and 3 hiding behind leaves. 8 + 3 = 11.",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "practice"]
+  },
+  {
+    "task_id": "task_apply_seed_planting",
+    "topic": "counting_to_20",
+    "skill_tags": ["count_objects", "one_to_one_correspondence"],
+    "difficulty": 2,
+    "type": "interactive",
+    "representations": ["visual", "manipulative"],
+    "prompt": "Plant exactly 7 seeds in the garden holes. Each hole needs exactly one seed.",
+    "visual": {"type": "garden_planting", "params": {"holes": 10, "target_seeds": 7, "seed_bag": 15}},
+    "input_type": "drag_drop",
+    "answer": 7,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "count_as_you_place", "hint": "Count each seed as you place it: 1, 2, 3..."},
+      {"method": "count_holes_first", "hint": "Count 7 holes, then fill them"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Drag seeds from the pouch to the holes"},
+      {"level": 2, "text": "Count as you place: are you at 7 yet?"},
+      {"level": 3, "text": "You need 7 seeds — not more, not fewer"}
+    ],
+    "explanation": "You planted exactly 7 seeds, one in each hole. Counting to check: 1, 2, 3, 4, 5, 6, 7. Perfect!",
+    "on_correct": {"trigger": "quest_progress", "target": "apply_1_complete"},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "apply"]
+  },
+  {
+    "task_id": "task_count_bridge_01",
+    "topic": "counting_to_20",
+    "skill_tags": ["count_objects", "count_sequence"],
+    "difficulty": 2,
+    "type": "interactive",
+    "representations": ["visual", "symbolic"],
+    "prompt": "Count the vine strands needed to complete the bridge. How many strands do you see growing?",
+    "visual": {"type": "vine_bridge_count", "params": {"growing_vines": 8, "needed_total": 8}},
+    "input_type": "number_entry",
+    "answer": 8,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "count_one_by_one", "hint": "Count each vine strand from left to right"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Count each green vine strand"},
+      {"level": 2, "text": "Start from the left side of the bridge"},
+      {"level": 3, "text": "There are 8 vine strands"}
+    ],
+    "explanation": "There are 8 vine strands growing across the gap. When all 8 are strong enough, the bridge is complete!",
+    "on_correct": {"trigger": "eco_puzzle_progress", "target": "eco_01"},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "apply"]
+  },
+  {
+    "task_id": "task_boss_counting_mastery",
+    "topic": "counting_to_20",
+    "skill_tags": ["count_objects", "count_sequence", "one_to_one_correspondence"],
+    "difficulty": 3,
+    "type": "multi_step",
+    "representations": ["visual", "symbolic", "number_line"],
+    "prompt": "The Seed Stone Challenge: Count objects in 5 different scenes to restore the ancient Seed Stone!",
+    "visual": {"type": "multi_scene_count", "params": {"scenes": 5, "count_range": [5, 20]}},
+    "input_type": "number_entry",
+    "answer": "variable",
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "count_one_by_one", "hint": "Take your time with each scene"},
+      {"method": "group_and_count", "hint": "Look for natural groups in each scene"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Take each scene one at a time — no rush"},
+      {"level": 2, "text": "Use your counter seeds tool if it helps"},
+      {"level": 3, "text": "Remember: some objects might be partially hidden"}
+    ],
+    "explanation": "You've mastered counting! You can count objects up to 20 by counting one by one, or by grouping. The Seed Stone is restored!",
+    "on_correct": {"trigger": "boss_defeat", "target": "level_01_boss"},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "boss"]
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "level_id": "level_03",
+  "zone_id": "zone_1",
+  "topic": "place_value_ones_tens",
+  "skill_tags": ["place_value_ones_tens", "expanded_form", "number_composition"],
+  "region_name": "The Stacking Stones",
+  "landmark": {
+    "name": "The Ten-Stone Arch",
+    "description": "A majestic arch built from grouped stones — bundles of ten and loose ones. When correctly assembled, it glows with ancient energy."
+  },
+  "environment": {
+    "tilemap": "res://assets/tilesets/zone_1_ground.tres",
+    "parallax_layers": ["sky_midday", "far_trees_green", "mid_rocks", "mist_light"],
+    "ambient_color": "#3A6B2F",
+    "light_rays": true,
+    "particles": ["dust", "pollen"]
+  },
+  "interactables": [
+    {"type": "altar", "id": "stack_1", "position": [300, 400], "properties": {"purpose": "tens_stacking"}},
+    {"type": "altar", "id": "stack_2", "position": [500, 400], "properties": {"purpose": "ones_stacking"}},
+    {"type": "stone_pile", "id": "sp_3", "position": [200, 440], "properties": {"stone_count": 10, "bundle": "tens"}},
+    {"type": "stone_pile", "id": "sp_4", "position": [600, 440], "properties": {"stone_count": 1, "bundle": "ones"}},
+    {"type": "switch_totem", "id": "st_1", "position": [700, 380], "properties": {"triggers": "gate_1"}},
+    {"type": "gate", "id": "gate_1", "position": [750, 380], "properties": {"state": "closed", "required_task": "task_pv_gate"}},
+    {"type": "climbable_tree", "id": "ct_3", "position": [100, 350]},
+    {"type": "vine", "id": "v_1", "position": [400, 200], "properties": {"swing": true}},
+    {"type": "carving", "id": "carv_1", "position": [350, 350], "properties": {"shows": "number_decomposition"}},
+    {"type": "npc", "id": "npc_monkey", "position": [450, 430], "properties": {"species": "monkey", "name": "Kiko"}}
+  ],
+  "traversal": ["climbable_tree", "vine_swing", "stepping_stones"],
+  "eco_puzzle": {
+    "id": "eco_03",
+    "description": "Stack stones in the correct tens and ones configuration to build the arch gateway. Each correctly placed group adds stones to the arch.",
+    "task_ref": "task_pv_arch_build",
+    "on_solve": {
+      "action": "build",
+      "target": "arch_gateway",
+      "effect": "stone_arch_assemble"
+    }
+  },
+  "quest_line": {
+    "warmup": "task_diagnostic_pv_01",
+    "teach": ["task_teach_tens_ones", "task_teach_expanded_form"],
+    "practice": ["task_practice_pv_decompose", "task_practice_pv_compose", "task_practice_pv_identify"],
+    "apply": ["task_apply_arch_build", "task_apply_pv_gate"],
+    "boss": "task_boss_place_value_mastery"
+  },
+  "rewards": {
+    "tool_unlock": null,
+    "traversal_unlock": "vine_swing",
+    "jungle_restore": "arch_gateway_built",
+    "reference_pages": ["ref_place_value", "ref_tens_and_ones"],
+    "collectibles": ["ancient_rune_1", "ancient_rune_2", "ancient_rune_3"]
+  },
+  "connections": {
+    "north": null,
+    "south": null,
+    "east": "level_04",
+    "west": "level_02",
+    "shortcuts": [
+      {"target": "level_05", "requires": "vine_swing"}
+    ]
+  },
+  "restore_states": {
+    "fog_cleared": false,
+    "vegetation_grown": false,
+    "bridge_rebuilt": false,
+    "wildlife_spawned": false,
+    "landmark_activated": false
+  },
+  "mini_games": [
+    {
+      "template": "totem_array_builder",
+      "config": {
+        "rows_range": [1, 9],
+        "cols_range": [1, 1],
+        "partial_given": false,
+        "area_model_mode": false
+      }
+    },
+    {
+      "template": "pattern_trail",
+      "config": {
+        "pattern_rule": "count_by_10",
+        "start_value": 10,
+        "representation": "sequence"
+      }
+    },
+    {
+      "template": "vine_jump_number_line",
+      "config": {
+        "min_value": 0,
+        "max_value": 99,
+        "jump_size": 10,
+        "number_type": "whole"
+      }
+    }
+  ],
+  "choice_map": [
+    {
+      "approach": "physical_bundling",
+      "description": "Group individual stones into bundles of 10, then count bundles and remaining ones"
+    },
+    {
+      "approach": "place_value_chart",
+      "description": "Use a tens|ones chart to decompose and compose numbers"
+    }
+  ]
+}

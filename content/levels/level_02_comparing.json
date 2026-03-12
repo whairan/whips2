@@ -1,0 +1,96 @@
+{
+  "level_id": "level_02",
+  "zone_id": "zone_1",
+  "topic": "comparing_numbers",
+  "skill_tags": ["compare_numbers", "greater_less_equal", "ordering"],
+  "region_name": "The Twin Falls",
+  "landmark": {
+    "name": "The Balance Vines",
+    "description": "Two hanging vines with platforms that tilt based on weight — a natural balance scale made by the jungle itself."
+  },
+  "environment": {
+    "tilemap": "res://assets/tilesets/zone_1_ground.tres",
+    "parallax_layers": ["sky_dawn", "far_trees_green", "mid_ferns_waterfall", "mist_waterfall"],
+    "ambient_color": "#2A5E2A",
+    "light_rays": true,
+    "particles": ["water_drops", "mist"]
+  },
+  "interactables": [
+    {"type": "weighing_vine", "id": "wv_1", "position": [300, 300]},
+    {"type": "weighing_vine", "id": "wv_2", "position": [500, 300]},
+    {"type": "comparison_basket", "id": "cb_1", "position": [250, 420], "properties": {"side": "left"}},
+    {"type": "comparison_basket", "id": "cb_2", "position": [550, 420], "properties": {"side": "right"}},
+    {"type": "climbable_tree", "id": "ct_2", "position": [700, 350]},
+    {"type": "fruit_tree", "id": "ft_3", "position": [150, 400], "properties": {"fruit_type": "coconut", "count_range": [3, 9]}},
+    {"type": "stone_pile", "id": "sp_2", "position": [650, 440], "properties": {"stone_count": 7}},
+    {"type": "npc", "id": "npc_frog", "position": [400, 430], "properties": {"species": "frog", "name": "Comparison Frog"}},
+    {"type": "sign", "id": "sign_1", "position": [100, 400], "properties": {"text": "Which way does the vine tilt?"}},
+    {"type": "fountain", "id": "fn_1", "position": [400, 200], "properties": {"state": "dry"}}
+  ],
+  "traversal": ["climbable_tree", "vine_swing", "stepping_stones"],
+  "eco_puzzle": {
+    "id": "eco_02",
+    "description": "Balance the comparison vines with the correct fruit counts on each side. When balanced correctly, the waterfall activates.",
+    "task_ref": "task_compare_balance_02",
+    "on_solve": {
+      "action": "activate",
+      "target": "fn_1",
+      "effect": "waterfall_start"
+    }
+  },
+  "quest_line": {
+    "warmup": "task_diagnostic_compare_01",
+    "teach": ["task_teach_compare_groups", "task_teach_greater_less_symbols"],
+    "practice": ["task_practice_compare_1", "task_practice_compare_2", "task_practice_ordering"],
+    "apply": ["task_apply_vine_balance", "task_apply_rank_trees"],
+    "boss": "task_boss_comparing_mastery"
+  },
+  "rewards": {
+    "tool_unlock": null,
+    "traversal_unlock": null,
+    "jungle_restore": "waterfall_activated",
+    "reference_pages": ["ref_comparing_numbers", "ref_greater_less_equal"],
+    "collectibles": ["crystal_drop_1", "crystal_drop_2"]
+  },
+  "connections": {
+    "north": null,
+    "south": null,
+    "east": "level_03",
+    "west": "level_01"
+  },
+  "restore_states": {
+    "fog_cleared": false,
+    "vegetation_grown": false,
+    "water_flowing": false,
+    "wildlife_spawned": false,
+    "landmark_activated": false
+  },
+  "mini_games": [
+    {
+      "template": "fruit_count_harvest",
+      "config": {
+        "object_type": "mixed_fruit",
+        "count_range": [1, 20],
+        "operation": "compare"
+      }
+    },
+    {
+      "template": "temple_balance_altar",
+      "config": {
+        "equation_type": "comparison",
+        "num_steps": 1,
+        "allow_negative": false
+      }
+    }
+  ],
+  "choice_map": [
+    {
+      "approach": "visual_grouping",
+      "description": "Line up objects side by side and see which group is larger visually"
+    },
+    {
+      "approach": "number_line_positioning",
+      "description": "Place both numbers on a number line and see which is further right"
+    }
+  ]
+}

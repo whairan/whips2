@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reference_page.schema.json",
+  "title": "ReferencePage",
+  "description": "An in-game reference codex page",
+  "type": "object",
+  "required": ["page_id", "title", "topic", "skill_tags", "unlock_level", "sections"],
+  "properties": {
+    "page_id": {
+      "type": "string",
+      "pattern": "^ref_[a-z0-9_]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 60
+    },
+    "topic": {
+      "type": "string"
+    },
+    "skill_tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "unlock_level": {
+      "type": "string",
+      "pattern": "^level_\\d{2}$"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["heading", "content"],
+        "properties": {
+          "heading": { "type": "string" },
+          "content": { "type": "string", "minLength": 10 },
+          "visual": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["image", "diagram", "animation", "interactive"] },
+              "asset": { "type": "string" }
+            }
+          },
+          "examples": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["problem", "solution"],
+              "properties": {
+                "problem": { "type": "string" },
+                "solution": { "type": "string" },
+                "steps": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      },
+      "minItems": 1
+    },
+    "common_pitfalls": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["mistake", "correction"],
+        "properties": {
+          "mistake": { "type": "string" },
+          "correction": { "type": "string" }
+        }
+      }
+    },
+    "related_pages": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "practice_task_ids": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Tasks linked to 'Practice Now' button"
+    }
+  },
+  "additionalProperties": false
+}

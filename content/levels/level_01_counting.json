@@ -1,0 +1,106 @@
+{
+  "level_id": "level_01",
+  "zone_id": "zone_1",
+  "topic": "counting_to_20",
+  "skill_tags": ["count_objects", "count_sequence", "one_to_one_correspondence"],
+  "region_name": "The First Clearing",
+  "landmark": {
+    "name": "The Seed Stone",
+    "description": "An ancient stone with carved numbers, half-covered in moss. Solving counting puzzles reveals more of its surface."
+  },
+  "environment": {
+    "tilemap": "res://assets/tilesets/zone_1_ground.tres",
+    "parallax_layers": ["sky_dawn", "far_trees_green", "mid_ferns", "mist_light"],
+    "ambient_color": "#2D5A27",
+    "light_rays": true,
+    "particles": ["pollen", "fireflies_subtle"]
+  },
+  "interactables": [
+    {"type": "fruit_tree", "id": "ft_1", "position": [200, 400], "properties": {"fruit_type": "mango", "count_range": [1, 10]}},
+    {"type": "fruit_tree", "id": "ft_2", "position": [450, 380], "properties": {"fruit_type": "mango", "count_range": [3, 12]}},
+    {"type": "berry_bush", "id": "bb_1", "position": [320, 450], "properties": {"berry_count": 5}},
+    {"type": "stone_pile", "id": "sp_1", "position": [600, 420], "properties": {"stone_count": 8}},
+    {"type": "seed_pouch", "id": "sdp_1", "position": [150, 430], "properties": {"seed_count": 12}},
+    {"type": "counting_birds", "id": "cb_1", "position": [500, 200], "properties": {"bird_count": 6}},
+    {"type": "leaf_pile", "id": "lp_1", "position": [700, 440], "properties": {"leaf_count": 15}},
+    {"type": "butterfly_cluster", "id": "bc_1", "position": [350, 250], "properties": {"butterfly_count": 4}},
+    {"type": "climbable_tree", "id": "ct_1", "position": [550, 350]},
+    {"type": "rope_bridge", "id": "rb_1", "position": [400, 300], "properties": {"state": "broken"}}
+  ],
+  "traversal": ["climbable_tree", "stepping_stones", "rope_bridge"],
+  "eco_puzzle": {
+    "id": "eco_01",
+    "description": "Count the seeds correctly to grow a vine bridge across the gap. Each correct seed count adds a vine strand until the bridge is complete.",
+    "task_ref": "task_count_bridge_01",
+    "on_solve": {
+      "action": "grow",
+      "target": "rb_1",
+      "effect": "vine_bridge_grow"
+    }
+  },
+  "quest_line": {
+    "warmup": "task_diagnostic_count_01",
+    "teach": ["task_teach_count_tap", "task_teach_count_sequence"],
+    "practice": ["task_practice_count_fruit", "task_practice_count_stones", "task_practice_count_animals"],
+    "apply": ["task_apply_seed_planting", "task_apply_eco_bridge"],
+    "boss": "task_boss_counting_mastery"
+  },
+  "rewards": {
+    "tool_unlock": "counter_seeds",
+    "traversal_unlock": null,
+    "jungle_restore": "clearing_bloom",
+    "reference_pages": ["ref_counting_basics", "ref_number_names_1_20"],
+    "collectibles": ["golden_seed_1", "golden_seed_2", "golden_seed_3"]
+  },
+  "connections": {
+    "north": null,
+    "south": null,
+    "east": "level_02",
+    "west": null
+  },
+  "restore_states": {
+    "fog_cleared": false,
+    "vegetation_grown": false,
+    "bridge_rebuilt": false,
+    "wildlife_spawned": false,
+    "landmark_activated": false
+  },
+  "mini_games": [
+    {
+      "template": "fruit_count_harvest",
+      "config": {
+        "object_type": "mango",
+        "count_range": [1, 15],
+        "operation": "count",
+        "time_limit_optional": 30
+      }
+    },
+    {
+      "template": "pattern_trail",
+      "config": {
+        "pattern_rule": "count_by_1",
+        "start_value": 1,
+        "representation": "sequence"
+      }
+    },
+    {
+      "template": "vine_jump_number_line",
+      "config": {
+        "min_value": 0,
+        "max_value": 20,
+        "jump_size": 1,
+        "number_type": "whole"
+      }
+    }
+  ],
+  "choice_map": [
+    {
+      "approach": "count_one_by_one",
+      "description": "Tap each object individually, counting aloud: 1, 2, 3..."
+    },
+    {
+      "approach": "group_and_count",
+      "description": "Group objects into sets of 2, 3, or 5, then skip count the groups"
+    }
+  ]
+}

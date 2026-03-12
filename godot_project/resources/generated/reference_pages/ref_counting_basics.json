@@ -1,0 +1,45 @@
+{
+  "page_id": "ref_counting_basics",
+  "title": "Counting Basics",
+  "topic": "counting_to_20",
+  "skill_tags": ["count_objects", "count_sequence", "one_to_one_correspondence"],
+  "unlock_level": "level_01",
+  "sections": [
+    {
+      "heading": "What is Counting?",
+      "content": "Counting tells us how many objects are in a group. We say number words in order — 1, 2, 3, 4, 5... — while pointing to each object exactly once. The last number we say is the total count.",
+      "visual": {"type": "animation", "asset": "counting_intro_anim"},
+      "examples": [
+        {
+          "problem": "How many apples are in this group? (shows 5 apples)",
+          "solution": "5 apples",
+          "steps": ["Point to the first apple and say '1'", "Point to the next apple and say '2'", "Continue: '3', '4', '5'", "The last number is 5, so there are 5 apples"]
+        }
+      ]
+    },
+    {
+      "heading": "One-to-One Correspondence",
+      "content": "Each object gets exactly one number. Don't skip any objects, and don't count the same object twice. It helps to move or mark objects as you count them.",
+      "visual": {"type": "diagram", "asset": "one_to_one_diagram"},
+      "examples": [
+        {
+          "problem": "A common mistake: counting 6 when there are 5",
+          "solution": "Make sure each object gets exactly one number — no more, no less",
+          "steps": ["Touch each object as you count", "Move counted objects to a new pile", "If you lose track, start over"]
+        }
+      ]
+    },
+    {
+      "heading": "Tips for Counting",
+      "content": "For large groups, try organizing objects into rows or groups of 5 or 10. This makes it easier to count without losing track. You can also use your Counter Seeds tool to keep track.",
+      "visual": {"type": "diagram", "asset": "grouping_tip_diagram"}
+    }
+  ],
+  "common_pitfalls": [
+    {"mistake": "Counting the same object twice", "correction": "Move or mark each object as you count it"},
+    {"mistake": "Skipping an object", "correction": "Go in order — left to right, top to bottom"},
+    {"mistake": "Saying the wrong number word", "correction": "Practice the counting sequence: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10..."}
+  ],
+  "related_pages": ["ref_number_names_1_20"],
+  "practice_task_ids": ["task_practice_count_fruit", "task_practice_count_stones"]
+}

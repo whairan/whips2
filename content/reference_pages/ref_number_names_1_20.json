@@ -1,0 +1,45 @@
+{
+  "page_id": "ref_number_names_1_20",
+  "title": "Number Names 1 to 20",
+  "topic": "counting_to_20",
+  "skill_tags": ["count_sequence", "number_names"],
+  "unlock_level": "level_01",
+  "sections": [
+    {
+      "heading": "The Counting Sequence",
+      "content": "Numbers have names that go in a fixed order. Learning this order is the first step in counting. Say each number name out loud as you practice: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.",
+      "visual": {"type": "diagram", "asset": "number_line_1_10"},
+      "examples": [
+        {
+          "problem": "What number comes after 7?",
+          "solution": "8",
+          "steps": ["Count up from 7: 7... 8", "The next number after 7 is 8"]
+        }
+      ]
+    },
+    {
+      "heading": "The Teen Numbers (11-19)",
+      "content": "After 10, the numbers are called 'teens'. They can be tricky because their names don't always follow the pattern. Eleven (11), twelve (12) are unique words. Then: thirteen (13), fourteen (14), fifteen (15), sixteen (16), seventeen (17), eighteen (18), nineteen (19).",
+      "visual": {"type": "diagram", "asset": "number_line_11_20"},
+      "examples": [
+        {
+          "problem": "What number comes after 12?",
+          "solution": "13 (thirteen)",
+          "steps": ["Count up: 11 (eleven), 12 (twelve), 13 (thirteen)", "Thirteen = three + teen = 13"]
+        }
+      ]
+    },
+    {
+      "heading": "Twenty and the Pattern",
+      "content": "After 19 comes 20 (twenty). Once you know 1-20, the pattern repeats: twenty-one (21), twenty-two (22), and so on. The counting sequence is like a path through the jungle — each step follows the one before.",
+      "visual": {"type": "diagram", "asset": "number_path_20"}
+    }
+  ],
+  "common_pitfalls": [
+    {"mistake": "Mixing up 12 and 20", "correction": "Twelve (12) is ten + two. Twenty (20) is two tens."},
+    {"mistake": "Skipping teen numbers", "correction": "Practice the sequence 11-19 until it feels natural"},
+    {"mistake": "Saying 'eleventeen'", "correction": "After 10 come eleven (11) and twelve (12) — these are special names"}
+  ],
+  "related_pages": ["ref_counting_basics", "ref_skip_counting"],
+  "practice_task_ids": ["task_teach_tap_count", "task_teach_sequence"]
+}

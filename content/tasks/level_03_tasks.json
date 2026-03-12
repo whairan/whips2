@@ -1,0 +1,235 @@
+[
+  {
+    "task_id": "task_diagnostic_pv_01",
+    "topic": "place_value_ones_tens",
+    "skill_tags": ["place_value_ones_tens"],
+    "difficulty": 1,
+    "type": "number_entry",
+    "representations": ["symbolic"],
+    "prompt": "How many tens are in the number 34?",
+    "input_type": "number_entry",
+    "answer": 3,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "identify_tens_digit", "hint": "The tens digit is on the left side of a 2-digit number"}
+    ],
+    "hints": [
+      {"level": 1, "text": "In 34, which digit tells you the tens?"},
+      {"level": 2, "text": "The digit on the left is the tens digit"},
+      {"level": 3, "text": "34 = 3 tens and 4 ones"}
+    ],
+    "explanation": "In 34, the digit 3 is in the tens place, so there are 3 tens. 34 = 30 + 4 = 3 tens and 4 ones.",
+    "on_correct": {"trigger": "quest_progress", "target": "warmup_complete"},
+    "on_incorrect": {"feedback": "gentle_retry", "offer_hint": true},
+    "whiteboard_enabled": true,
+    "tools_available": [],
+    "tags": ["curated", "warmup"]
+  },
+  {
+    "task_id": "task_teach_tens_ones",
+    "topic": "place_value_ones_tens",
+    "skill_tags": ["place_value_ones_tens", "number_composition"],
+    "difficulty": 1,
+    "type": "interactive",
+    "representations": ["visual", "manipulative"],
+    "prompt": "Drag stones into bundles of 10. How many bundles of 10 can you make from 25 stones? How many are left over?",
+    "visual": {"type": "stone_bundler", "params": {"total_stones": 25}},
+    "input_type": "fill_table",
+    "answer": [2, 5],
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "physical_grouping", "hint": "Drag 10 stones together to make a bundle"},
+      {"method": "mental_division", "hint": "Think: how many 10s fit in 25?"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Try dragging 10 stones together to make one bundle"},
+      {"level": 2, "text": "You can make 2 bundles of 10 from 25 stones"},
+      {"level": 3, "text": "25 = 2 tens and 5 ones"}
+    ],
+    "explanation": "25 stones can be grouped into 2 bundles of 10 with 5 left over. So 25 = 2 tens + 5 ones = 20 + 5.",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "teach"]
+  },
+  {
+    "task_id": "task_teach_expanded_form",
+    "topic": "place_value_ones_tens",
+    "skill_tags": ["expanded_form"],
+    "difficulty": 1,
+    "type": "interactive",
+    "representations": ["symbolic"],
+    "prompt": "Write 47 in expanded form: ___ + ___",
+    "visual": {"type": "expanded_form_builder", "params": {"number": 47}},
+    "input_type": "fill_table",
+    "answer": [40, 7],
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "split_by_place", "hint": "Split the tens value and ones value"},
+      {"method": "use_blocks", "hint": "Think of 4 ten-blocks and 7 one-blocks"}
+    ],
+    "hints": [
+      {"level": 1, "text": "What is the value of the 4 in 47? What is the value of the 7?"},
+      {"level": 2, "text": "The 4 is in the tens place, so it's worth 40"},
+      {"level": 3, "text": "47 = 40 + 7"}
+    ],
+    "explanation": "47 in expanded form is 40 + 7. The 4 in the tens place is worth 40 (4 tens), and the 7 in the ones place is worth 7.",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "teach"]
+  },
+  {
+    "task_id": "task_practice_pv_decompose",
+    "topic": "place_value_ones_tens",
+    "skill_tags": ["place_value_ones_tens"],
+    "difficulty": 2,
+    "type": "number_entry",
+    "representations": ["symbolic"],
+    "prompt": "In the number 63, how many ones are there?",
+    "input_type": "number_entry",
+    "answer": 3,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "read_ones_digit", "hint": "The ones digit is on the right"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Which digit is in the ones place?"},
+      {"level": 2, "text": "The ones place is the rightmost digit"},
+      {"level": 3, "text": "63 has 3 ones"}
+    ],
+    "explanation": "In 63, the digit 3 is in the ones place. There are 3 ones (and 6 tens).",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "practice"]
+  },
+  {
+    "task_id": "task_practice_pv_compose",
+    "topic": "place_value_ones_tens",
+    "skill_tags": ["number_composition"],
+    "difficulty": 2,
+    "type": "number_entry",
+    "representations": ["visual", "symbolic"],
+    "prompt": "What number is made of 5 tens and 8 ones?",
+    "visual": {"type": "tens_ones_blocks", "params": {"tens": 5, "ones": 8}},
+    "input_type": "number_entry",
+    "answer": 58,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "add_values", "hint": "5 tens = 50, 8 ones = 8, total = ?"},
+      {"method": "place_digits", "hint": "Put 5 in tens place, 8 in ones place"}
+    ],
+    "hints": [
+      {"level": 1, "text": "5 tens means 50"},
+      {"level": 2, "text": "50 + 8 = ?"},
+      {"level": 3, "text": "5 tens and 8 ones = 58"}
+    ],
+    "explanation": "5 tens = 50, 8 ones = 8. Combined: 50 + 8 = 58.",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "practice"]
+  },
+  {
+    "task_id": "task_practice_pv_identify",
+    "topic": "place_value_ones_tens",
+    "skill_tags": ["place_value_ones_tens", "expanded_form"],
+    "difficulty": 3,
+    "type": "number_entry",
+    "representations": ["symbolic"],
+    "prompt": "What number does this expanded form represent? 70 + 6 = ___",
+    "input_type": "number_entry",
+    "answer": 76,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "add_parts", "hint": "Simply add 70 and 6"},
+      {"method": "read_place_values", "hint": "70 means 7 tens, 6 means 6 ones"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Add the tens value and the ones value"},
+      {"level": 2, "text": "70 + 6 = ?"},
+      {"level": 3, "text": "70 + 6 = 76"}
+    ],
+    "explanation": "70 + 6 = 76. The 7 goes in the tens place and the 6 goes in the ones place.",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "practice"]
+  },
+  {
+    "task_id": "task_apply_arch_build",
+    "topic": "place_value_ones_tens",
+    "skill_tags": ["place_value_ones_tens", "number_composition"],
+    "difficulty": 2,
+    "type": "interactive",
+    "representations": ["visual", "manipulative"],
+    "prompt": "Build the arch! Place the correct number of ten-bundles and one-stones to make the number 43. The arch needs exactly 43 stones to be stable.",
+    "visual": {"type": "arch_builder", "params": {"target": 43}},
+    "input_type": "fill_table",
+    "answer": [4, 3],
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "decompose_then_place", "hint": "How many tens? How many ones?"},
+      {"method": "count_up_to_target", "hint": "Start placing tens until you're close, then add ones"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Split 43 into tens and ones"},
+      {"level": 2, "text": "43 = ___ tens and ___ ones"},
+      {"level": 3, "text": "43 = 4 tens and 3 ones"}
+    ],
+    "explanation": "43 = 4 tens + 3 ones. Place 4 ten-bundles (40) and 3 single stones (3) to build the arch!",
+    "on_correct": {"trigger": "quest_progress", "target": "apply_1_complete"},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "apply"]
+  },
+  {
+    "task_id": "task_pv_arch_build",
+    "topic": "place_value_ones_tens",
+    "skill_tags": ["place_value_ones_tens", "expanded_form", "number_composition"],
+    "difficulty": 3,
+    "type": "interactive",
+    "representations": ["visual", "symbolic"],
+    "prompt": "The Ten-Stone Arch needs 3 keystones. For each keystone, decompose the number into tens and ones. Keystone 1: 56 = ___ + ___",
+    "visual": {"type": "keystone_puzzle", "params": {"numbers": [56, 82, 39]}},
+    "input_type": "fill_table",
+    "answer": [50, 6],
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "expanded_form", "hint": "Write each number as tens value + ones value"}
+    ],
+    "hints": [
+      {"level": 1, "text": "What is the tens value of 56?"},
+      {"level": 2, "text": "5 tens = 50"},
+      {"level": 3, "text": "56 = 50 + 6"}
+    ],
+    "explanation": "56 = 50 + 6. The first keystone fits! The arch is forming.",
+    "on_correct": {"trigger": "eco_puzzle_progress", "target": "eco_03"},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "apply"]
+  },
+  {
+    "task_id": "task_boss_place_value_mastery",
+    "topic": "place_value_ones_tens",
+    "skill_tags": ["place_value_ones_tens", "expanded_form", "number_composition"],
+    "difficulty": 3,
+    "type": "multi_step",
+    "representations": ["visual", "symbolic", "manipulative"],
+    "prompt": "The Ten-Stone Arch Challenge: Decompose, compose, and identify place values in 6 rounds to complete the arch and unlock the Vine Swing!",
+    "visual": {"type": "multi_round_pv", "params": {"rounds": 6}},
+    "input_type": "number_entry",
+    "answer": "variable",
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "decompose_compose", "hint": "Practice splitting and combining tens and ones"},
+      {"method": "place_value_chart", "hint": "Use a tens|ones chart in your whiteboard"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Take each round one at a time"},
+      {"level": 2, "text": "Remember: the left digit is tens, the right digit is ones"},
+      {"level": 3, "text": "Use your whiteboard to draw a place-value chart"}
+    ],
+    "explanation": "You've mastered place value! You understand that the position of a digit determines its value. The Ten-Stone Arch is complete, and you've unlocked the Vine Swing!",
+    "on_correct": {"trigger": "boss_defeat", "target": "level_03_boss"},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "boss"]
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "zone_id": "zone_1",
+  "name": "Jungle Edge — Foundations",
+  "theme": "Bright forest clearing at the jungle entrance. Dappled sunlight, low ferns, friendly animals.",
+  "description": "The player's first steps into the jungle. Foundational math concepts — counting, comparing, place value, patterns, and basic addition and subtraction. The jungle is welcoming and responsive, teaching the player that learning restores the world.",
+  "levels": ["level_01", "level_02", "level_03", "level_04", "level_05", "level_06"],
+  "palette": {
+    "primary": "#3A7D44",
+    "secondary": "#8FBC8F",
+    "accent": "#FFD700",
+    "ground": "#5C4033",
+    "shadow": "#1A2E1A",
+    "sky": "#87CEEB"
+  },
+  "guide_animal": {
+    "name": "Kiko",
+    "species": "Curious monkey"
+  },
+  "ambient": {
+    "particles": ["pollen", "leaves"],
+    "lighting": "bright_day",
+    "music_theme": "jungle_edge_calm"
+  },
+  "traversal_unlocks": ["vine_swing"]
+}

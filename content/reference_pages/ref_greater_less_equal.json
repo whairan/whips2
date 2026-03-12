@@ -1,0 +1,50 @@
+{
+  "page_id": "ref_greater_less_equal",
+  "title": "Greater Than, Less Than, Equal",
+  "topic": "comparing_numbers",
+  "skill_tags": ["greater_less_equal"],
+  "unlock_level": "level_02",
+  "sections": [
+    {
+      "heading": "The Three Comparison Symbols",
+      "content": "We use three symbols to show how two numbers compare. Greater than (>) means the first number is bigger. Less than (<) means the first number is smaller. Equal (=) means both numbers are the same.",
+      "visual": {"type": "diagram", "asset": "symbols_chart"},
+      "examples": [
+        {
+          "problem": "Write the correct symbol: 8 ___ 5",
+          "solution": "8 > 5",
+          "steps": ["8 is bigger than 5", "The open side faces the bigger number", "8 > 5 (8 is greater than 5)"]
+        },
+        {
+          "problem": "Write the correct symbol: 3 ___ 7",
+          "solution": "3 < 7",
+          "steps": ["3 is smaller than 7", "The pointed end faces the smaller number", "3 < 7 (3 is less than 7)"]
+        }
+      ]
+    },
+    {
+      "heading": "The Crocodile Trick",
+      "content": "Imagine the > and < symbols are a hungry crocodile's mouth. The crocodile always wants to eat the bigger number! So the open side (the wide part) always faces the bigger number.",
+      "visual": {"type": "animation", "asset": "crocodile_anim"},
+      "examples": [
+        {
+          "problem": "12 ___ 12",
+          "solution": "12 = 12",
+          "steps": ["Both numbers are the same", "When numbers are equal, use the = sign", "The crocodile can't decide — they're equal!"]
+        }
+      ]
+    },
+    {
+      "heading": "Reading Comparison Sentences",
+      "content": "Read comparison sentences from left to right, just like reading words. '5 > 3' is read as 'five is greater than three.' '2 < 9' is read as 'two is less than nine.' '7 = 7' is read as 'seven equals seven.'",
+      "visual": {"type": "diagram", "asset": "reading_comparisons"}
+    }
+  ],
+  "common_pitfalls": [
+    {"mistake": "Confusing > and <", "correction": "The open (wide) side always faces the bigger number — like a hungry mouth"},
+    {"mistake": "Reading the symbol backwards", "correction": "Always read left to right: 4 < 8 means '4 is less than 8'"},
+    {"mistake": "Forgetting the equal sign", "correction": "When both numbers are the same, use = not > or <"}
+  ],
+  "related_pages": ["ref_comparing_numbers"],
+  "practice_task_ids": ["task_teach_greater_less_symbols", "task_practice_compare_2"]
+}

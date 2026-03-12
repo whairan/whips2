@@ -1,0 +1,152 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "task.schema.json",
+  "title": "Task",
+  "description": "A single math task/problem",
+  "type": "object",
+  "required": [
+    "task_id", "topic", "skill_tags", "difficulty", "type",
+    "representations", "prompt", "input_type", "answer",
+    "hints", "explanation"
+  ],
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "pattern": "^task_[a-z0-9_]+$"
+    },
+    "topic": {
+      "type": "string"
+    },
+    "skill_tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1,
+      "maxItems": 4
+    },
+    "difficulty": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5
+    },
+    "type": {
+      "type": "string",
+      "enum": ["interactive", "multiple_choice", "number_entry", "expression_entry", "drag_drop", "drawing", "multi_step"]
+    },
+    "representations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["visual", "symbolic", "word", "number_line", "table", "graph", "manipulative"]
+      },
+      "minItems": 1
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 5
+    },
+    "visual": {
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "params": { "type": "object" }
+      }
+    },
+    "input_type": {
+      "type": "string",
+      "enum": ["number_entry", "multiple_choice", "expression", "fraction", "coordinate", "drag_order", "drag_drop", "draw", "select_region", "fill_table"]
+    },
+    "answer": {
+      "oneOf": [
+        { "type": "number" },
+        { "type": "string" },
+        { "type": "array" },
+        { "type": "object" }
+      ]
+    },
+    "accept_equivalent": {
+      "type": "array",
+      "items": {},
+      "description": "Alternative correct answers (e.g., equivalent fractions)"
+    },
+    "solution_approaches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["method", "hint"],
+        "properties": {
+          "method": { "type": "string" },
+          "hint": { "type": "string" }
+        }
+      },
+      "minItems": 1
+    },
+    "hints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["level", "text"],
+        "properties": {
+          "level": { "type": "integer", "minimum": 1, "maximum": 4 },
+          "text": { "type": "string", "minLength": 5 }
+        }
+      },
+      "minItems": 1,
+      "maxItems": 4
+    },
+    "explanation": {
+      "type": "string",
+      "minLength": 10
+    },
+    "on_correct": {
+      "type": "object",
+      "properties": {
+        "trigger": { "type": "string" },
+        "target": { "type": "string" },
+        "reward": { "type": "string" }
+      }
+    },
+    "on_incorrect": {
+      "type": "object",
+      "properties": {
+        "feedback": { "type": "string", "enum": ["gentle_retry", "show_hint", "offer_easier", "explain_mistake"] },
+        "offer_hint": { "type": "boolean" },
+        "common_mistakes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["wrong_answer", "feedback"],
+            "properties": {
+              "wrong_answer": {},
+              "feedback": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "whiteboard_enabled": {
+      "type": "boolean",
+      "default": true
+    },
+    "tools_available": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["curated", "generated", "warmup", "teach", "practice", "apply", "boss", "review"]
+      }
+    },
+    "generator_params": {
+      "type": ["object", "null"],
+      "description": "If non-null, this task is a template for the generator"
+    },
+    "time_limit_seconds": {
+      "type": ["integer", "null"],
+      "minimum": 10,
+      "description": "Optional time limit (never forced in calm mode)"
+    }
+  },
+  "additionalProperties": false
+}

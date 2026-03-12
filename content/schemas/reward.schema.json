@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reward.schema.json",
+  "title": "Reward",
+  "description": "A reward definition",
+  "type": "object",
+  "required": ["reward_id", "category", "name", "description", "unlock_condition"],
+  "properties": {
+    "reward_id": {
+      "type": "string",
+      "pattern": "^reward_[a-z0-9_]+$"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["tool", "traversal", "jungle_restore", "reference_page", "collectible", "cosmetic"]
+    },
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Path to icon asset"
+    },
+    "unlock_condition": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": ["level_complete", "boss_defeat", "collectible_found", "skill_mastered", "quest_complete"]
+        },
+        "level_id": { "type": "string" },
+        "skill_tag": { "type": "string" },
+        "quest_id": { "type": "string" }
+      }
+    },
+    "visual_effect": {
+      "type": "string",
+      "description": "Effect played on unlock"
+    }
+  },
+  "additionalProperties": false
+}

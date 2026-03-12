@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "dialogue.schema.json",
+  "title": "Dialogue",
+  "description": "NPC dialogue tree",
+  "type": "object",
+  "required": ["dialogue_id", "speaker", "level_id", "nodes"],
+  "properties": {
+    "dialogue_id": {
+      "type": "string",
+      "pattern": "^dlg_[a-z0-9_]+$"
+    },
+    "speaker": {
+      "type": "object",
+      "required": ["name", "species"],
+      "properties": {
+        "name": { "type": "string" },
+        "species": { "type": "string" },
+        "portrait": { "type": "string" }
+      }
+    },
+    "level_id": {
+      "type": "string",
+      "pattern": "^level_\\d{2}$"
+    },
+    "trigger": {
+      "type": "string",
+      "enum": ["on_enter", "on_interact", "on_quest_start", "on_quest_complete", "on_boss_defeat", "on_hint_request"]
+    },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "text"],
+        "properties": {
+          "id": { "type": "string" },
+          "text": { "type": "string", "minLength": 1 },
+          "choices": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["text", "next"],
+              "properties": {
+                "text": { "type": "string" },
+                "next": { "type": "string" },
+                "condition": { "type": "string" }
+              }
+            }
+          },
+          "next": { "type": ["string", "null"] },
+          "action": {
+            "type": "object",
+            "properties": {
+              "type": { "type": "string", "enum": ["start_task", "give_item", "unlock", "trigger_event"] },
+              "target": { "type": "string" }
+            }
+          }
+        }
+      },
+      "minItems": 1
+    }
+  },
+  "additionalProperties": false
+}

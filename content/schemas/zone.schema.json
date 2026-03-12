@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "zone.schema.json",
+  "title": "Zone",
+  "description": "A jungle zone containing multiple levels/regions",
+  "type": "object",
+  "required": ["zone_id", "name", "theme", "description", "levels", "palette", "guide_animal", "ambient"],
+  "properties": {
+    "zone_id": {
+      "type": "string",
+      "pattern": "^zone_[1-8]$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 60
+    },
+    "theme": {
+      "type": "string",
+      "minLength": 10
+    },
+    "description": {
+      "type": "string",
+      "minLength": 20
+    },
+    "levels": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^level_\\d{2}$" },
+      "minItems": 1,
+      "maxItems": 12
+    },
+    "palette": {
+      "type": "object",
+      "required": ["primary", "secondary", "accent", "ground", "shadow"],
+      "properties": {
+        "primary": { "$ref": "#/$defs/hex_color" },
+        "secondary": { "$ref": "#/$defs/hex_color" },
+        "accent": { "$ref": "#/$defs/hex_color" },
+        "ground": { "$ref": "#/$defs/hex_color" },
+        "shadow": { "$ref": "#/$defs/hex_color" },
+        "sky": { "$ref": "#/$defs/hex_color" },
+        "water": { "$ref": "#/$defs/hex_color" },
+        "mist": { "$ref": "#/$defs/hex_color" },
+        "glow": { "$ref": "#/$defs/hex_color" }
+      },
+      "additionalProperties": false
+    },
+    "guide_animal": {
+      "type": "object",
+      "required": ["name", "species"],
+      "properties": {
+        "name": { "type": "string" },
+        "species": { "type": "string" }
+      }
+    },
+    "ambient": {
+      "type": "object",
+      "required": ["particles", "lighting"],
+      "properties": {
+        "particles": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["pollen", "mist", "fireflies", "dust", "leaves", "water_drops", "spores", "embers"]
+          }
+        },
+        "lighting": {
+          "type": "string",
+          "enum": ["bright_day", "filtered_canopy", "dim_grove", "dusk", "night", "torch_lit"]
+        },
+        "music_theme": { "type": "string" }
+      }
+    },
+    "traversal_unlocks": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "hex_color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    }
+  }
+}

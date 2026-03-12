@@ -1,0 +1,50 @@
+{
+  "page_id": "ref_addition_basics",
+  "title": "Addition Basics",
+  "topic": "addition_within_20",
+  "skill_tags": ["add_single_digit", "add_within_10", "count_on"],
+  "unlock_level": "level_06",
+  "sections": [
+    {
+      "heading": "What is Addition?",
+      "content": "Addition means combining two groups together to find the total. When you add 3 apples and 4 apples, you get 7 apples altogether. The plus sign (+) means 'and' or 'combine'. The equals sign (=) shows the result.",
+      "visual": {"type": "animation", "asset": "addition_combine_anim"},
+      "examples": [
+        {
+          "problem": "3 + 4 = ?",
+          "solution": "7",
+          "steps": ["Start with a group of 3", "Put a group of 4 next to it", "Count all together: 1, 2, 3, 4, 5, 6, 7", "3 + 4 = 7"]
+        }
+      ]
+    },
+    {
+      "heading": "Counting On",
+      "content": "Counting on is a faster way to add. Start from the bigger number and count up by the smaller number. For 5 + 3: start at 5, then count on 3 more: 6, 7, 8. The answer is 8. You don't need to count the first group again!",
+      "visual": {"type": "interactive", "asset": "count_on_number_line"},
+      "examples": [
+        {
+          "problem": "6 + 2 = ?",
+          "solution": "8",
+          "steps": ["Start at the bigger number: 6", "Count on 2 more: 7, 8", "6 + 2 = 8"]
+        },
+        {
+          "problem": "2 + 7 = ?",
+          "solution": "9",
+          "steps": ["The bigger number is 7, so start there", "Count on 2 more: 8, 9", "2 + 7 = 9 (same as 7 + 2)"]
+        }
+      ]
+    },
+    {
+      "heading": "Addition is Commutative",
+      "content": "The order doesn't matter in addition! 3 + 5 and 5 + 3 both equal 8. This is called the commutative property. It means you can always start with the bigger number when counting on, which makes it easier.",
+      "visual": {"type": "diagram", "asset": "commutative_diagram"}
+    }
+  ],
+  "common_pitfalls": [
+    {"mistake": "Starting the count-on from the number instead of the next number", "correction": "If starting at 5, count on starting with 6, not 5"},
+    {"mistake": "Counting the first group again", "correction": "When counting on, trust the first number — don't recount it"},
+    {"mistake": "Losing track of how many to count on", "correction": "Use your fingers to track how many you've counted on"}
+  ],
+  "related_pages": ["ref_number_bonds_to_10", "ref_counting_basics"],
+  "practice_task_ids": []
+}

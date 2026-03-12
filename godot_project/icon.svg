@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="16" fill="#2D5A27"/>
+  <text x="64" y="52" font-family="Arial" font-size="24" font-weight="bold" fill="#FFD700" text-anchor="middle">WHIPS</text>
+  <text x="64" y="78" font-family="Arial" font-size="12" fill="#8FBC8F" text-anchor="middle">Jungle Math</text>
+  <circle cx="40" cy="100" r="6" fill="#3A7D44"/>
+  <circle cx="64" cy="100" r="6" fill="#4A8D54"/>
+  <circle cx="88" cy="100" r="6" fill="#5A9D64"/>
+</svg>

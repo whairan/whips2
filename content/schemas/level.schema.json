@@ -1,0 +1,249 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "level.schema.json",
+  "title": "Level",
+  "description": "A single level/region in the jungle — one math topic",
+  "type": "object",
+  "required": [
+    "level_id", "zone_id", "topic", "skill_tags", "region_name", "landmark",
+    "environment", "interactables", "traversal", "eco_puzzle",
+    "quest_line", "rewards", "connections", "restore_states",
+    "mini_games", "choice_map"
+  ],
+  "properties": {
+    "level_id": {
+      "type": "string",
+      "pattern": "^level_\\d{2}$"
+    },
+    "zone_id": {
+      "type": "string",
+      "pattern": "^zone_[1-8]$"
+    },
+    "topic": {
+      "type": "string",
+      "minLength": 3
+    },
+    "skill_tags": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z][a-z0-9_]*$" },
+      "minItems": 1,
+      "maxItems": 6
+    },
+    "region_name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 60
+    },
+    "landmark": {
+      "type": "object",
+      "required": ["name", "description"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+    "environment": {
+      "type": "object",
+      "required": ["parallax_layers", "ambient_color"],
+      "properties": {
+        "tilemap": { "type": "string" },
+        "parallax_layers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 3,
+          "maxItems": 7
+        },
+        "ambient_color": { "$ref": "#/$defs/hex_color" },
+        "light_rays": { "type": "boolean" },
+        "particles": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "interactables": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/interactable_placement" },
+      "minItems": 8
+    },
+    "traversal": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "climbable_tree", "climbable_vine", "climbable_wall", "climbable_ladder",
+          "vine_swing", "rope_bridge", "stepping_stones", "mushroom_bounce",
+          "floating_log", "bamboo_vault", "cloud_step", "ruin_climb",
+          "night_vision_path", "temple_levitate", "zip_vine", "moving_platform",
+          "elevator", "underwater_tunnel", "slide"
+        ]
+      },
+      "minItems": 2
+    },
+    "eco_puzzle": {
+      "type": "object",
+      "required": ["id", "description", "task_ref", "on_solve"],
+      "properties": {
+        "id": { "type": "string" },
+        "description": { "type": "string", "minLength": 10 },
+        "task_ref": { "type": "string" },
+        "on_solve": {
+          "type": "object",
+          "required": ["action", "target", "effect"],
+          "properties": {
+            "action": { "type": "string", "enum": ["restore", "grow", "activate", "reveal", "build", "fill", "bloom", "illuminate"] },
+            "target": { "type": "string" },
+            "effect": { "type": "string" }
+          }
+        }
+      }
+    },
+    "quest_line": {
+      "type": "object",
+      "required": ["warmup", "teach", "practice", "apply", "boss"],
+      "properties": {
+        "warmup": { "type": "string" },
+        "teach": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "practice": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 2
+        },
+        "apply": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        },
+        "boss": { "type": "string" }
+      }
+    },
+    "rewards": {
+      "type": "object",
+      "required": ["jungle_restore", "reference_pages"],
+      "properties": {
+        "tool_unlock": { "type": ["string", "null"] },
+        "traversal_unlock": { "type": ["string", "null"] },
+        "jungle_restore": { "type": "string" },
+        "reference_pages": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1,
+          "maxItems": 4
+        },
+        "collectibles": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "cosmetics": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "connections": {
+      "type": "object",
+      "properties": {
+        "north": { "type": ["string", "null"] },
+        "south": { "type": ["string", "null"] },
+        "east": { "type": ["string", "null"] },
+        "west": { "type": ["string", "null"] },
+        "shortcuts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["target", "requires"],
+            "properties": {
+              "target": { "type": "string" },
+              "requires": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "restore_states": {
+      "type": "object",
+      "properties": {
+        "fog_cleared": { "type": "boolean" },
+        "vegetation_grown": { "type": "boolean" },
+        "bridge_rebuilt": { "type": "boolean" },
+        "wildlife_spawned": { "type": "boolean" },
+        "landmark_activated": { "type": "boolean" },
+        "water_flowing": { "type": "boolean" }
+      }
+    },
+    "mini_games": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["template", "config"],
+        "properties": {
+          "template": {
+            "type": "string",
+            "enum": [
+              "fruit_count_harvest", "vine_jump_number_line",
+              "totem_array_builder", "river_split_share",
+              "bamboo_fraction_craft", "jungle_market_barter",
+              "temple_balance_altar", "pattern_trail"
+            ]
+          },
+          "config": { "type": "object" }
+        }
+      },
+      "minItems": 2,
+      "maxItems": 5
+    },
+    "choice_map": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["approach", "description"],
+        "properties": {
+          "approach": { "type": "string" },
+          "description": { "type": "string" }
+        }
+      },
+      "minItems": 2
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "hex_color": {
+      "type": "string",
+      "pattern": "^#[0-9A-Fa-f]{6}$"
+    },
+    "interactable_placement": {
+      "type": "object",
+      "required": ["type", "id"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "fruit_tree", "berry_bush", "climbable_tree", "vine", "rope_bridge",
+            "switch_totem", "rune_door", "pushable_stone", "pushable_log",
+            "water_wheel", "dam", "stepping_stones", "moving_platform",
+            "ladder", "zip_vine", "floating_log", "mushroom_bounce",
+            "treasure_chest", "npc", "sign", "altar", "cauldron",
+            "scale", "mechanism", "gate", "fountain", "pool",
+            "carving", "telescope", "lever", "elevator",
+            "stone_pile", "seed_pouch", "counting_birds", "leaf_pile",
+            "butterfly_cluster", "weighing_vine", "comparison_basket",
+            "drum_stone", "pattern_vine", "offering_bowl", "number_bond_tree",
+            "stream", "puzzle_wall"
+          ]
+        },
+        "id": { "type": "string" },
+        "position": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "properties": { "type": "object" }
+      }
+    }
+  }
+}
