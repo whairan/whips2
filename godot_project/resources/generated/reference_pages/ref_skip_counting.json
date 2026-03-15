@@ -1,0 +1,52 @@
+{
+  "page_id": "ref_skip_counting",
+  "title": "Skip Counting",
+  "topic": "skip_counting",
+  "skill_tags": ["skip_count_2s", "skip_count_5s", "skip_count_10s"],
+  "unlock_level": "level_04",
+  "sections": [
+    {
+      "heading": "What is Skip Counting?",
+      "content": "Skip counting means counting forward by a number other than 1. Instead of 1, 2, 3, 4... you jump ahead by the same amount each time. Skip counting by 2s: 2, 4, 6, 8, 10... Skip counting by 5s: 5, 10, 15, 20, 25... Skip counting by 10s: 10, 20, 30, 40, 50...",
+      "visual": {"type": "animation", "asset": "skip_count_number_line"},
+      "examples": [
+        {
+          "problem": "Skip count by 2s starting from 2, up to 14",
+          "solution": "2, 4, 6, 8, 10, 12, 14",
+          "steps": ["Start at 2", "Add 2 each time: 2+2=4", "Keep going: 4+2=6, 6+2=8...", "2, 4, 6, 8, 10, 12, 14"]
+        }
+      ]
+    },
+    {
+      "heading": "Counting by 5s",
+      "content": "Counting by 5s is useful because our hands have 5 fingers each. Count by 5s to quickly count groups of 5: 5, 10, 15, 20, 25, 30... Notice that numbers ending in 5 or 0 appear in the pattern.",
+      "visual": {"type": "diagram", "asset": "counting_by_5s_hands"},
+      "examples": [
+        {
+          "problem": "You have 4 bunches of 5 bananas. How many total?",
+          "solution": "20 bananas",
+          "steps": ["Count by 5s: one bunch = 5", "Two bunches = 10", "Three bunches = 15", "Four bunches = 20"]
+        }
+      ]
+    },
+    {
+      "heading": "Counting by 10s",
+      "content": "Counting by 10s is the fastest way to count large groups. Each jump adds 10: 10, 20, 30, 40, 50, 60, 70, 80, 90, 100. The tens digit goes up by 1 each time. This connects directly to place value!",
+      "visual": {"type": "interactive", "asset": "count_by_10s_blocks"},
+      "examples": [
+        {
+          "problem": "Skip count by 10s from 10 to 70",
+          "solution": "10, 20, 30, 40, 50, 60, 70",
+          "steps": ["Start at 10", "Add 10 each time", "Watch the tens digit increase: 1, 2, 3, 4, 5, 6, 7"]
+        }
+      ]
+    }
+  ],
+  "common_pitfalls": [
+    {"mistake": "Accidentally counting by 1 in the middle of a skip count", "correction": "Keep the same jump size throughout — say the pattern out loud"},
+    {"mistake": "Skipping a number in the pattern", "correction": "Use finger taps or claps to keep rhythm"},
+    {"mistake": "Confusing skip counting by 2 with counting even numbers only", "correction": "Skip counting by 2 from 1 gives odd numbers (1,3,5...). Starting from 2 gives even numbers (2,4,6...)"}
+  ],
+  "related_pages": ["ref_counting_basics", "ref_even_and_odd"],
+  "practice_task_ids": []
+}

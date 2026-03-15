@@ -1,0 +1,235 @@
+[
+  {
+    "task_id": "task_diagnostic_compare_01",
+    "topic": "comparing_numbers",
+    "skill_tags": ["compare_numbers"],
+    "difficulty": 1,
+    "type": "multiple_choice",
+    "representations": ["visual"],
+    "prompt": "Which group has more: 5 mangoes or 3 mangoes?",
+    "visual": {"type": "side_by_side_groups", "params": {"left": 5, "right": 3, "object": "mango"}},
+    "input_type": "multiple_choice",
+    "answer": "5",
+    "accept_equivalent": ["left", "5 mangoes"],
+    "solution_approaches": [
+      {"method": "visual_comparison", "hint": "Look at both groups — which one looks bigger?"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Count each group and compare the numbers"},
+      {"level": 2, "text": "5 is more than 3"},
+      {"level": 3, "text": "The left group has more mangoes"}
+    ],
+    "explanation": "5 mangoes is more than 3 mangoes. 5 > 3 because 5 comes after 3 when counting.",
+    "on_correct": {"trigger": "quest_progress", "target": "warmup_complete"},
+    "on_incorrect": {"feedback": "gentle_retry", "offer_hint": true},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "warmup"]
+  },
+  {
+    "task_id": "task_teach_compare_groups",
+    "topic": "comparing_numbers",
+    "skill_tags": ["compare_numbers", "greater_less_equal"],
+    "difficulty": 1,
+    "type": "interactive",
+    "representations": ["visual", "symbolic"],
+    "prompt": "Match each pair by drawing a line between groups that are equal, or drag the > or < symbol between them.",
+    "visual": {"type": "comparison_interactive", "params": {"pairs": [[4, 7], [6, 6], [9, 3]]}},
+    "input_type": "drag_drop",
+    "answer": ["<", "=", ">"],
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "count_and_compare", "hint": "Count each group, then decide which is bigger"},
+      {"method": "one_to_one_match", "hint": "Match items one-to-one — which group has leftovers?"}
+    ],
+    "hints": [
+      {"level": 1, "text": "The crocodile mouth always eats the bigger number!"},
+      {"level": 2, "text": "4 and 7: which is bigger? 6 and 6: are they the same?"},
+      {"level": 3, "text": "4 < 7, 6 = 6, 9 > 3"}
+    ],
+    "explanation": "We use < (less than), > (greater than), and = (equal) to compare numbers. The open side of < or > always faces the bigger number.",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "teach"]
+  },
+  {
+    "task_id": "task_teach_greater_less_symbols",
+    "topic": "comparing_numbers",
+    "skill_tags": ["greater_less_equal"],
+    "difficulty": 1,
+    "type": "interactive",
+    "representations": ["symbolic"],
+    "prompt": "Fill in the correct symbol: 8 ___ 12. Choose >, <, or =.",
+    "visual": {"type": "symbol_chooser", "params": {"left": 8, "right": 12}},
+    "input_type": "multiple_choice",
+    "answer": "<",
+    "accept_equivalent": ["less than"],
+    "solution_approaches": [
+      {"method": "number_line", "hint": "Which number is further right on the number line?"},
+      {"method": "crocodile_rule", "hint": "The crocodile eats the bigger number"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Is 8 bigger or smaller than 12?"},
+      {"level": 2, "text": "8 is smaller, so the symbol opens toward 12"},
+      {"level": 3, "text": "8 < 12"}
+    ],
+    "explanation": "8 < 12. The less-than symbol (<) means the number on the left is smaller than the number on the right.",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "teach"]
+  },
+  {
+    "task_id": "task_practice_compare_1",
+    "topic": "comparing_numbers",
+    "skill_tags": ["compare_numbers", "greater_less_equal"],
+    "difficulty": 2,
+    "type": "number_entry",
+    "representations": ["symbolic"],
+    "prompt": "Which is greater: 14 or 9? Type the bigger number.",
+    "input_type": "number_entry",
+    "answer": 14,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "count_compare", "hint": "14 has a tens digit, 9 doesn't"},
+      {"method": "number_line", "hint": "Place both on a number line"}
+    ],
+    "hints": [
+      {"level": 1, "text": "One of these numbers is a teen number (bigger than 10)"},
+      {"level": 2, "text": "14 is in the teens, 9 is a single digit"},
+      {"level": 3, "text": "14 is greater than 9"}
+    ],
+    "explanation": "14 > 9. Numbers with a tens digit (like 14) are always greater than single-digit numbers (like 9).",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "practice"]
+  },
+  {
+    "task_id": "task_practice_compare_2",
+    "topic": "comparing_numbers",
+    "skill_tags": ["compare_numbers"],
+    "difficulty": 2,
+    "type": "multiple_choice",
+    "representations": ["visual", "symbolic"],
+    "prompt": "Compare: 15 ___ 15. What symbol goes in the blank?",
+    "input_type": "multiple_choice",
+    "answer": "=",
+    "accept_equivalent": ["equal", "equals"],
+    "solution_approaches": [
+      {"method": "direct_comparison", "hint": "Are the two numbers the same?"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Look carefully at both numbers"},
+      {"level": 2, "text": "When two numbers are the same, we use ="},
+      {"level": 3, "text": "15 = 15"}
+    ],
+    "explanation": "15 = 15. When both numbers are identical, they are equal. We use the equals sign (=).",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "practice"]
+  },
+  {
+    "task_id": "task_practice_ordering",
+    "topic": "comparing_numbers",
+    "skill_tags": ["ordering"],
+    "difficulty": 3,
+    "type": "interactive",
+    "representations": ["symbolic"],
+    "prompt": "Put these numbers in order from smallest to biggest: 12, 5, 19, 8",
+    "input_type": "drag_order",
+    "answer": [5, 8, 12, 19],
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "find_smallest_first", "hint": "Find the smallest number, then the next smallest"},
+      {"method": "number_line_place", "hint": "Picture where each number sits on a number line"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Start by finding the smallest number in the list"},
+      {"level": 2, "text": "5 is the smallest. What comes next?"},
+      {"level": 3, "text": "The order is: 5, 8, 12, 19"}
+    ],
+    "explanation": "From smallest to biggest: 5, 8, 12, 19. Each number is greater than the one before it.",
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "practice"]
+  },
+  {
+    "task_id": "task_apply_vine_balance",
+    "topic": "comparing_numbers",
+    "skill_tags": ["compare_numbers", "greater_less_equal"],
+    "difficulty": 2,
+    "type": "interactive",
+    "representations": ["visual", "manipulative"],
+    "prompt": "The Balance Vines need equal weight on both sides. The left vine has 7 fruits. How many fruits should go on the right vine to make them balance?",
+    "visual": {"type": "balance_vines", "params": {"left": 7, "right": "?"}},
+    "input_type": "number_entry",
+    "answer": 7,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "match_counts", "hint": "For balance, both sides need the same number"},
+      {"method": "use_counters", "hint": "Place counter seeds on the right to match the left"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Balance means both sides are equal"},
+      {"level": 2, "text": "If the left has 7, the right needs..."},
+      {"level": 3, "text": "7 = 7, so put 7 on the right"}
+    ],
+    "explanation": "To balance the vines, both sides need the same number of fruits. 7 = 7, so we need 7 on the right side too!",
+    "on_correct": {"trigger": "quest_progress", "target": "apply_1_complete"},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "apply"]
+  },
+  {
+    "task_id": "task_compare_balance_02",
+    "topic": "comparing_numbers",
+    "skill_tags": ["compare_numbers", "greater_less_equal"],
+    "difficulty": 2,
+    "type": "interactive",
+    "representations": ["visual"],
+    "prompt": "Set the balance correctly to start the waterfall! Which side is heavier: the side with 11 coconuts or the side with 8 coconuts?",
+    "visual": {"type": "waterfall_balance", "params": {"left": 11, "right": 8}},
+    "input_type": "multiple_choice",
+    "answer": "11",
+    "accept_equivalent": ["left", "11 coconuts"],
+    "solution_approaches": [
+      {"method": "count_compare", "hint": "Count each side and compare"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Count the coconuts on each side"},
+      {"level": 2, "text": "11 is more than 8"},
+      {"level": 3, "text": "The left side with 11 coconuts is heavier"}
+    ],
+    "explanation": "11 > 8, so the side with 11 coconuts is heavier. The waterfall flows from the heavier side!",
+    "on_correct": {"trigger": "eco_puzzle_progress", "target": "eco_02"},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "apply"]
+  },
+  {
+    "task_id": "task_boss_comparing_mastery",
+    "topic": "comparing_numbers",
+    "skill_tags": ["compare_numbers", "greater_less_equal", "ordering"],
+    "difficulty": 3,
+    "type": "multi_step",
+    "representations": ["visual", "symbolic"],
+    "prompt": "The Twin Falls Challenge: Compare, order, and balance numbers in 5 rounds to fully activate the waterfall!",
+    "visual": {"type": "multi_round_compare", "params": {"rounds": 5}},
+    "input_type": "number_entry",
+    "answer": "variable",
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "systematic_compare", "hint": "Take each pair one at a time"},
+      {"method": "number_line_thinking", "hint": "Visualize the numbers on a line"}
+    ],
+    "hints": [
+      {"level": 1, "text": "Compare each pair carefully — no rush!"},
+      {"level": 2, "text": "Remember: bigger numbers are further right on the number line"},
+      {"level": 3, "text": "Use your counter seeds if you need help"}
+    ],
+    "explanation": "You've mastered comparing numbers! You can use >, <, and = to compare any two numbers, and you can put numbers in order.",
+    "on_correct": {"trigger": "boss_defeat", "target": "level_02_boss"},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "boss"]
+  }
+]

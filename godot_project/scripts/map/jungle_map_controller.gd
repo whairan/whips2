@@ -30,6 +30,11 @@ func _ready() -> void:
 	_update_fog()
 	_draw_connections()
 
+	# Connect BackButton
+	var back_button = get_node_or_null("../BackButton")
+	if back_button and back_button is Button:
+		back_button.pressed.connect(func(): SceneManager.go_to_title())
+
 
 func _setup_camera() -> void:
 	_camera = Camera2D.new()

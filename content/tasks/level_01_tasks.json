@@ -185,6 +185,34 @@
     "tags": ["curated", "apply"]
   },
   {
+    "task_id": "task_apply_eco_bridge",
+    "topic": "counting_to_20",
+    "skill_tags": ["count_objects", "one_to_one_correspondence"],
+    "difficulty": 2,
+    "type": "interactive",
+    "representations": ["visual", "symbolic"],
+    "prompt": "The bridge needs exactly 12 vine strands to be safe. Count how many are already there, then figure out how many more we need to add.",
+    "visual": {"type": "vine_bridge_partial", "params": {"existing_vines": 8, "total_needed": 12}},
+    "input_type": "number_entry",
+    "answer": 4,
+    "accept_equivalent": [],
+    "solution_approaches": [
+      {"method": "count_and_subtract", "hint": "Count the existing vines, then figure out how many more to reach 12"},
+      {"method": "count_up", "hint": "Start at the number of existing vines and count up to 12"}
+    ],
+    "hints": [
+      {"level": 1, "text": "First, count how many vine strands are already on the bridge"},
+      {"level": 2, "text": "There are 8 vines already. How many more do you need to reach 12?"},
+      {"level": 3, "text": "Count up from 8: 9, 10, 11, 12 — that's 4 more!"}
+    ],
+    "explanation": "The bridge has 8 vine strands and needs 12 total. Counting up from 8 to 12: 9, 10, 11, 12 — we need 4 more strands!",
+    "on_correct": {"trigger": "quest_progress", "target": "apply_2_complete"},
+    "on_incorrect": {"feedback": "gentle_retry", "offer_hint": true},
+    "whiteboard_enabled": true,
+    "tools_available": ["counter_seeds"],
+    "tags": ["curated", "apply"]
+  },
+  {
     "task_id": "task_count_bridge_01",
     "topic": "counting_to_20",
     "skill_tags": ["count_objects", "count_sequence"],

@@ -1,0 +1,52 @@
+{
+  "page_id": "ref_number_bonds_to_10",
+  "title": "Number Bonds to 10",
+  "topic": "number_bonds",
+  "skill_tags": ["number_bonds_to_10", "part_whole"],
+  "unlock_level": "level_07",
+  "sections": [
+    {
+      "heading": "What Are Number Bonds?",
+      "content": "Number bonds show how a number can be split into two parts. For example, 10 can be split into 7 and 3, or 6 and 4, or 5 and 5. The two parts always add up to the whole. Knowing number bonds to 10 by heart makes addition and subtraction much faster.",
+      "visual": {"type": "diagram", "asset": "number_bond_diagram"},
+      "examples": [
+        {
+          "problem": "What are all the number bonds for 10?",
+          "solution": "0+10, 1+9, 2+8, 3+7, 4+6, 5+5, 6+4, 7+3, 8+2, 9+1, 10+0",
+          "steps": ["Start with 0 and 10", "Move one over: 1 and 9", "Keep going: 2 and 8, 3 and 7, 4 and 6", "The middle: 5 and 5", "Each pair sums to 10"]
+        }
+      ]
+    },
+    {
+      "heading": "Using Number Bonds",
+      "content": "Once you know that 7 + 3 = 10, you also know: 3 + 7 = 10, 10 - 3 = 7, and 10 - 7 = 3. One number bond gives you four facts! In the jungle, this helps you quickly figure out how many more you need to reach 10.",
+      "visual": {"type": "interactive", "asset": "bond_fact_family"},
+      "examples": [
+        {
+          "problem": "You have 6 seeds. How many more do you need to make 10?",
+          "solution": "4 more seeds",
+          "steps": ["You know the bond: 6 + 4 = 10", "So you need 4 more", "Check: 6 + 4 = 10 ✓"]
+        }
+      ]
+    },
+    {
+      "heading": "Memorizing Number Bonds",
+      "content": "The best way to learn number bonds is practice. Try the Ten Frame: a grid with 2 rows of 5 squares. Fill in some squares, and the empty ones show the other part of 10. With enough practice, you'll recall them instantly.",
+      "visual": {"type": "interactive", "asset": "ten_frame_interactive"},
+      "examples": [
+        {
+          "problem": "A ten frame has 8 filled squares. How many are empty?",
+          "solution": "2 empty squares",
+          "steps": ["A ten frame has 10 total squares", "8 are filled", "10 - 8 = 2 are empty", "Number bond: 8 + 2 = 10"]
+        }
+      ]
+    }
+  ],
+  "common_pitfalls": [
+    {"mistake": "Forgetting that 0 + 10 and 10 + 0 are valid bonds", "correction": "Zero is a number too — 0 and 10 make a bond to 10"},
+    {"mistake": "Mixing up bonds (thinking 6 + 5 = 10)", "correction": "Check by counting: 6, 7, 8, 9, 10 — that's 4 more, so 6 + 4 = 10"},
+    {"mistake": "Only memorizing one direction", "correction": "Learn both: if 3 + 7 = 10, then 7 + 3 = 10 too"}
+  ],
+  "related_pages": ["ref_addition_basics", "ref_place_value"],
+  "practice_task_ids": []
+}

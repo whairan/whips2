@@ -198,7 +198,7 @@ func _change_state(new_state: State) -> void:
 
 
 func _update_animation() -> void:
-	if not sprite:
+	if not sprite or not sprite.sprite_frames:
 		return
 
 	sprite.flip_h = facing_direction < 0

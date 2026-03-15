@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "Bash(python3:*)",
-      "Bash(pip install:*)"
+      "Bash(pip install:*)",
+      "Bash(python tools/content_validator.py:*)",
+      "Bash(python -m pytest:*)"
     ]
   }
 }

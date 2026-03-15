@@ -8,8 +8,8 @@ signal harvest_requested(fruit_type: String, count: int)
 @export var fruit_count: int = 5
 @export var harvested: bool = false
 
-@onready var fruit_sprites: Node2D = $FruitSprites if has_node("FruitSprites") else null
-@onready var tree_sprite: Sprite2D = $TreeSprite if has_node("TreeSprite") else null
+@onready var fruit_sprites: Node = $FruitSprites if has_node("FruitSprites") else null
+@onready var tree_sprite: Node = $TreeSprite if has_node("TreeSprite") else null
 
 
 func _ready() -> void:

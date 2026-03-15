@@ -1,0 +1,50 @@
+{
+  "page_id": "ref_tens_and_ones",
+  "title": "Tens and Ones",
+  "topic": "place_value_ones_tens",
+  "skill_tags": ["place_value_ones_tens", "number_composition"],
+  "unlock_level": "level_03",
+  "sections": [
+    {
+      "heading": "Grouping into Tens",
+      "content": "When we have lots of objects, we can make groups of 10 to count faster. Ten single objects become one group of ten. This is the basis of our whole number system — we bundle things in tens!",
+      "visual": {"type": "animation", "asset": "grouping_tens_anim"},
+      "examples": [
+        {
+          "problem": "You have 25 stones. How many groups of 10 can you make? How many are left over?",
+          "solution": "2 groups of 10, with 5 left over",
+          "steps": ["Make the first group of 10 stones", "Make the second group of 10 stones", "Count leftovers: 5 stones remain", "25 = 2 tens + 5 ones"]
+        }
+      ]
+    },
+    {
+      "heading": "Building Numbers from Tens and Ones",
+      "content": "You can build any two-digit number using tens and ones. Start with your tens bundles, then add the single ones. 3 tens and 7 ones makes 37. 5 tens and 0 ones makes 50. Every two-digit number is a combination of tens and ones.",
+      "visual": {"type": "interactive", "asset": "build_number_interactive"},
+      "examples": [
+        {
+          "problem": "What number is 4 tens and 6 ones?",
+          "solution": "46",
+          "steps": ["4 tens = 40", "6 ones = 6", "40 + 6 = 46"]
+        },
+        {
+          "problem": "What number is 7 tens and 0 ones?",
+          "solution": "70",
+          "steps": ["7 tens = 70", "0 ones = 0", "70 + 0 = 70"]
+        }
+      ]
+    },
+    {
+      "heading": "Using Base-Ten Blocks",
+      "content": "Base-ten blocks are a tool for understanding place value. A long bar represents 10 (one ten). A small cube represents 1 (one). To show a number, lay out the right number of bars and cubes. In the jungle, we use stone bundles and loose stones the same way!",
+      "visual": {"type": "diagram", "asset": "base_ten_blocks_diagram"}
+    }
+  ],
+  "common_pitfalls": [
+    {"mistake": "Making groups of the wrong size", "correction": "Each group must have exactly 10 — count carefully when bundling"},
+    {"mistake": "Forgetting the leftover ones", "correction": "After making all possible tens, always count the remaining singles"},
+    {"mistake": "Thinking 30 has 30 tens", "correction": "30 has 3 tens (3 groups of 10), not 30 tens"}
+  ],
+  "related_pages": ["ref_place_value", "ref_counting_basics"],
+  "practice_task_ids": ["task_teach_tens_ones", "task_practice_pv_compose"]
+}

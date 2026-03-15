@@ -7,8 +7,8 @@ enum BridgeState { BROKEN, BUILDING, INTACT }
 @export var bridge_state: BridgeState = BridgeState.BROKEN
 
 @onready var collision_body: StaticBody2D = $BridgeBody if has_node("BridgeBody") else null
-@onready var broken_sprite: Sprite2D = $BrokenSprite if has_node("BrokenSprite") else null
-@onready var intact_sprite: Sprite2D = $IntactSprite if has_node("IntactSprite") else null
+@onready var broken_sprite: Node = $BrokenSprite if has_node("BrokenSprite") else null
+@onready var intact_sprite: Node = $IntactSprite if has_node("IntactSprite") else null
 
 
 func _ready() -> void:

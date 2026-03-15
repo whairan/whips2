@@ -1,0 +1,45 @@
+{
+  "page_id": "ref_even_and_odd",
+  "title": "Even and Odd Numbers",
+  "topic": "even_odd",
+  "skill_tags": ["even_odd_identify", "even_odd_rules"],
+  "unlock_level": "level_05",
+  "sections": [
+    {
+      "heading": "What Are Even Numbers?",
+      "content": "Even numbers can be split into two equal groups with nothing left over. The even numbers are: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20... They end in 0, 2, 4, 6, or 8. Think of even as 'everything pairs up perfectly'.",
+      "visual": {"type": "animation", "asset": "even_pairing_anim"},
+      "examples": [
+        {
+          "problem": "Is 12 even or odd?",
+          "solution": "Even",
+          "steps": ["Split 12 into two groups", "12 ÷ 2 = 6 in each group", "No leftovers — it's even!", "Also: 12 ends in 2, which is even"]
+        }
+      ]
+    },
+    {
+      "heading": "What Are Odd Numbers?",
+      "content": "Odd numbers always have one left over when you try to split them into two equal groups. The odd numbers are: 1, 3, 5, 7, 9, 11, 13, 15, 17, 19... They end in 1, 3, 5, 7, or 9.",
+      "visual": {"type": "animation", "asset": "odd_pairing_anim"},
+      "examples": [
+        {
+          "problem": "Is 7 even or odd?",
+          "solution": "Odd",
+          "steps": ["Try to split 7 into two equal groups", "3 and 3 with 1 left over", "There's a leftover — it's odd!", "Also: 7 ends in 7, which is odd"]
+        }
+      ]
+    },
+    {
+      "heading": "The Quick Check",
+      "content": "The fastest way to check: just look at the last digit. If a number ends in 0, 2, 4, 6, or 8 — it's even. If it ends in 1, 3, 5, 7, or 9 — it's odd. This works for any number, even big ones!",
+      "visual": {"type": "diagram", "asset": "even_odd_chart"}
+    }
+  ],
+  "common_pitfalls": [
+    {"mistake": "Thinking 0 is odd", "correction": "0 is even — zero items can be split into two groups of zero"},
+    {"mistake": "Looking at the first digit instead of the last", "correction": "Always check the last (rightmost) digit to determine even or odd"},
+    {"mistake": "Thinking all small numbers are odd", "correction": "Both small and large numbers can be even or odd — 2 is even, 3 is odd"}
+  ],
+  "related_pages": ["ref_skip_counting", "ref_number_names_1_20"],
+  "practice_task_ids": []
+}

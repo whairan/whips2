@@ -1,0 +1,52 @@
+{
+  "page_id": "ref_place_value",
+  "title": "Understanding Place Value",
+  "topic": "place_value_ones_tens",
+  "skill_tags": ["place_value_ones_tens", "expanded_form"],
+  "unlock_level": "level_03",
+  "sections": [
+    {
+      "heading": "What is Place Value?",
+      "content": "In our number system, the position of a digit tells us its value. The same digit means different things in different places. In 35, the 3 means 30 (three tens), but in 53, the 3 means just 3 (three ones). Position matters!",
+      "visual": {"type": "diagram", "asset": "place_value_chart"},
+      "examples": [
+        {
+          "problem": "What is the value of 4 in the number 47?",
+          "solution": "40 (four tens)",
+          "steps": ["The 4 is in the tens place", "Tens place means multiply by 10", "4 × 10 = 40", "The 4 in 47 is worth 40"]
+        }
+      ]
+    },
+    {
+      "heading": "Tens and Ones Places",
+      "content": "A two-digit number has two places. The ones place is on the right — it tells how many single units. The tens place is on the left — it tells how many groups of ten. Together they make the whole number.",
+      "visual": {"type": "interactive", "asset": "tens_ones_interactive"},
+      "examples": [
+        {
+          "problem": "Break 63 into tens and ones",
+          "solution": "6 tens and 3 ones",
+          "steps": ["Look at the left digit: 6 — that's the tens", "Look at the right digit: 3 — that's the ones", "63 = 6 tens and 3 ones = 60 + 3"]
+        }
+      ]
+    },
+    {
+      "heading": "Expanded Form",
+      "content": "Expanded form shows a number as the sum of each digit's value. For 82: the 8 is worth 80 and the 2 is worth 2, so 82 = 80 + 2. This helps you see exactly what each digit contributes.",
+      "visual": {"type": "diagram", "asset": "expanded_form_diagram"},
+      "examples": [
+        {
+          "problem": "Write 56 in expanded form",
+          "solution": "56 = 50 + 6",
+          "steps": ["The 5 is in the tens place: 5 × 10 = 50", "The 6 is in the ones place: 6", "Add them: 50 + 6 = 56"]
+        }
+      ]
+    }
+  ],
+  "common_pitfalls": [
+    {"mistake": "Confusing tens and ones positions", "correction": "Ones are always on the right, tens on the left in a 2-digit number"},
+    {"mistake": "Saying 47 has '4 ones and 7 tens'", "correction": "Read left to right: 4 is tens (40), 7 is ones (7)"},
+    {"mistake": "Writing expanded form as digits instead of values", "correction": "Write the full value: 47 = 40 + 7, not 4 + 7"}
+  ],
+  "related_pages": ["ref_tens_and_ones", "ref_comparing_numbers"],
+  "practice_task_ids": ["task_practice_pv_decompose", "task_practice_pv_compose", "task_practice_pv_identify"]
+}

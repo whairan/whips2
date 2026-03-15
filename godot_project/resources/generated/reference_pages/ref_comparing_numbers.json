@@ -1,0 +1,45 @@
+{
+  "page_id": "ref_comparing_numbers",
+  "title": "Comparing Numbers",
+  "topic": "comparing_numbers",
+  "skill_tags": ["compare_numbers", "greater_less_equal"],
+  "unlock_level": "level_02",
+  "sections": [
+    {
+      "heading": "What Does Comparing Mean?",
+      "content": "Comparing two numbers means deciding which is bigger, which is smaller, or if they are the same. In the jungle, you compare groups all the time — which tree has more fruit? Which pile has fewer stones?",
+      "visual": {"type": "diagram", "asset": "compare_groups_intro"},
+      "examples": [
+        {
+          "problem": "Which is more: 6 mangoes or 4 mangoes?",
+          "solution": "6 mangoes is more than 4 mangoes",
+          "steps": ["Count the first group: 6", "Count the second group: 4", "6 is a bigger number than 4", "The group with 6 has more"]
+        }
+      ]
+    },
+    {
+      "heading": "One-to-One Matching",
+      "content": "A great way to compare is to match items from one group to the other, one by one. The group that has items left over is the bigger group. If no items are left over, the groups are equal.",
+      "visual": {"type": "animation", "asset": "one_to_one_matching_anim"},
+      "examples": [
+        {
+          "problem": "Compare 5 bananas and 5 coconuts",
+          "solution": "They are equal — both groups have 5",
+          "steps": ["Match each banana to a coconut", "Every banana has a match", "Every coconut has a match", "No leftovers — they are equal!"]
+        }
+      ]
+    },
+    {
+      "heading": "Using a Number Line",
+      "content": "On a number line, numbers get bigger as you move to the right. To compare two numbers, find them on the number line. The number further right is greater. The number further left is less.",
+      "visual": {"type": "interactive", "asset": "number_line_compare"}
+    }
+  ],
+  "common_pitfalls": [
+    {"mistake": "Thinking a number with more digits is always bigger", "correction": "For numbers up to 20, count carefully — 9 is less than 10 even though 9 looks bigger"},
+    {"mistake": "Confusing 'more' and 'less'", "correction": "More = bigger number, less = smaller number"},
+    {"mistake": "Not counting carefully before comparing", "correction": "Always count each group first, then compare the totals"}
+  ],
+  "related_pages": ["ref_greater_less_equal", "ref_counting_basics"],
+  "practice_task_ids": ["task_practice_compare_1", "task_practice_compare_2"]
+}
